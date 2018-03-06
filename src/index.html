@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="300英雄">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="jo.Chan">
+    <title>Sword and Pickaxe</title>
+    <link href="common/reset.css" type="text/css" rel="stylesheet">
+    <link href="home/css/swiper.min.css" type="text/css" rel="stylesheet">
+    <link href="home/css/main.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="common/img/favicon.ico">
+    <link href="home/js/video-js.css" type="text/css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../../components/html5shiv/dist/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../../components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <script src="home/js/main.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+    </header>
+    <header class="banner">
+        <div class="downLoad_box">
+            <div class="erweima_box"></div>
+            <div class="down">
+                <a href="http://res-pkg-cdn.pocketgamesol.com/swordnpickaxe/swordnpickaxe.apk" class="android"></a>
+                <a href="javascript:void(0);" onclick="alert('comming soon!')" class="ios"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.glassworld.sword" class="google"></a>
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="main_banner">
+            <div class="top">
+                <div class="video">
+                    <img src="home/img/playBtn.png" class="play_btn">
+                    <video class="video-box"
+                           poster="http://images-sg-cdn.pocketgamesol.com/sword/home/img/videoPic_71a2462.png"
+                           preload="auto"
+                           id="play_video"
+                           controls>
+                        <source src="home/media/video.mp4">
+                        <p class="vjs-no-js">To view this video please enable JavaScript, and consider
+                            upgrading to a web browser that
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                video</a>
+                        </p>
+                    </video>
+                </div>
+                <div class="FB">
+                    <a href="https://www.facebook.com/swordnpickaxe" target="_blank"><img src="home/img/FB.png"></a>
+                </div>
+            </div>
+            <div class="showPic">
+                <div class="intro">
+                    <img src="home/img/introduc.png">
+                </div>
+                <div class="gameFeature">
+                    <img src="home/img/gameFeature.png">
+                </div>
+            </div>
+            <div class="showPhoto">
+                <div class="box">
+                    <div class="leftTip"></div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide img-slide">
+                                <img src="home/img/showPic1.png" class="swiper-lazy">
+                            </div>
+                            <div class="swiper-slide img-slide">
+                                <img src="home/img/showPic2.png" class="swiper-lazy">
+                            </div>
+                            <div class="swiper-slide img-slide">
+                                <img src="home/img/showPic3.png" class="swiper-lazy">
+                            </div>
+                            <div class="swiper-slide img-slide">
+                                <img src="home/img/showPic4.png" class="swiper-lazy">
+                            </div>
+                            <div class="swiper-slide img-slide">
+                                <img src="home/img/showPic5.png" class="swiper-lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightTip"></div>
+                    <div class="swiper-pagination">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="../components/jquery/dist/jquery.min.js"></script>
+<script src="../components/swiper/swiper.min.js"></script>
+<script src="home/js/video.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+//        loop : true,
+        pagination: '.swiper-pagination',
+        paginationClickable: '.swiper-pagination',
+        nextButton: '.rightTip',
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        prevButton: '.leftTip',
+        spaceBetween: 5
+    });
+
+    /**
+     * video视频播放
+     * @type {Element}
+     */
+    var myVideo = document.getElementById('play_video');
+    myVideo.onclick = function () {
+        if (myVideo.paused) {
+            myVideo.play();
+            $(".play_btn").hide();
+        }
+        else {
+            myVideo.pause();
+            $(".play_btn").show();
+        }
+    };
+</script>
+</body>
+</html>
